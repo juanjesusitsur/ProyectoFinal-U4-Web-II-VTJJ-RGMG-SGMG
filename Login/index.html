@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="src/index.html">
+    <style>
+
+       /*  body{
+            background: linear-gradient(to right, #ffffff, #969feb);
+        } */
+        
+    </style>
+</head>
+<body>
+
+    <main>
+
+        <div class="text-center">
+            <img src="Logo.jpeg" width="48" alt="">
+        </div>
+    
+            <h2 class="fw-bold text-center py-2">Bienvenido :D</h2>
+    
+
+                <div class="contenedor__todo  py-5">
+                    <div class="caja__trasera">
+                        <div class="caja__trasera-login">
+                            <h3>¿Ya tienes una cuenta?</h3>
+                            <p>Inicia sesión para entrar en la página</p>
+                            <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                        </div>
+                        <div class="caja__trasera-register">
+                            <h3>¿Aún no tienes una cuenta?</h3>
+                            <p>Regístrate para que puedas iniciar sesión</p>
+                            <button id="btn__registrarse">Regístrarse</button>
+                        </div>
+                    </div>
+        
+                    <!--Formulario de Login y registro-->
+                    <div class="contenedor__login-register">
+                        <!--Login-->
+                        <form action="" class="formulario__login">
+                            <h2>Iniciar Sesión</h2>
+                            <input type="email" id="usuario" placeholder="Correo Electronico">
+                            <input type="password" id="contrasena" placeholder="Contraseña">
+                            <button type="submit" id="btn_entrar" onclick="validar()" href="Agregarpelis/index.html">Entrar</button>
+
+                            <a href="Agregarpelis/index.html"></a>
+                        </form>
+        
+                        <!--Register-->
+                        <form action="" class="formulario__register">
+                            <h2>Regístrarse</h2>
+                            <input type="text" placeholder="Nombre completo">
+                            <input type="email" placeholder="Correo Electronico">
+                            <input type="text" placeholder="Usuario">
+                            <input type="password" placeholder="Contraseña">
+                            <button>Regístrarse</button>
+                        </form>
+                    </div>
+                </div>              
+
+    </main>
+    <script src="script.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        function validar()
+			{
+                var link = "src/index.html";
+				var User = document.getElementById("usuario").value;
+				var contra = document.getElementById("contrasena").value;
+				if(User=="admin@adm.com" && contra=="12345")
+				{
+					alert("Usuario y contraseña Valido");
+                    let link = document.createElement("link");
+                    link.setAttribute("href", "src/index.html");
+                    let linkTexto = document.createTextNode("index");
+                    a.appendChild(linkTexto);
+                    
+                    document.body.appendChild(link);
+				}else{
+					alert("Usuario y contraseña no Valido");
+				}
+                window.onload = init;
+			}
+    </script>
+</body>
+</html>
