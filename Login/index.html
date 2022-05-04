@@ -7,7 +7,7 @@
     <title>Login</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="estilos.css">
-    <link rel="stylesheet" href="src/index.html">
+
     <style>
 
        /*  body{
@@ -48,7 +48,7 @@
                             <h2>Iniciar Sesión</h2>
                             <input type="email" id="usuario" placeholder="Correo Electronico">
                             <input type="password" id="contrasena" placeholder="Contraseña">
-                            <button type="submit" id="btn_entrar" onclick="validar()" href="Agregarpelis/index.html">Entrar</button>
+                            <button type="submit" id="btn_entrar" onclick="validar()" href="">Entrar</button>
 
                             <a href="Agregarpelis/index.html"></a>
                         </form>
@@ -71,22 +71,16 @@
     <script type="text/javascript">
         function validar()
 			{
-                var link = "src/index.html";
 				var User = document.getElementById("usuario").value;
 				var contra = document.getElementById("contrasena").value;
 				if(User=="admin@adm.com" && contra=="12345")
 				{
-					alert("Usuario y contraseña Valido");
-                    let link = document.createElement("link");
-                    link.setAttribute("href", "src/index.html");
-                    let linkTexto = document.createTextNode("index");
-                    a.appendChild(linkTexto);
                     
-                    document.body.appendChild(link);
+					alert("Usuario y contraseña Valido", window.location.assign(url="Agregarpelis/index.html"));
 				}else{
 					alert("Usuario y contraseña no Valido");
 				}
-                window.onload = init;
+                
 			}
     </script>
 </body>

@@ -18,21 +18,25 @@ const addJsonElement = json => {
     const templateElement = (data, position) => {
         return (`
             <button class="delete" onclick="removeElement(event, ${position})"></button>
-            <strong>${$form.titulo.value}</strong> ${data}
+            <strong>Titulo: ${$form.titulo.value}</strong><br> ${data}
         `)
     }
+
     $btnAdd.addEventListener("click", (event) => {
-        if($form.titulo.value != "" && $form.descripcion.value != ""){
+        if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != "" && $form.imegen.value != ""){
             let index = addJsonElement({
                 titulo: $form.titulo.value,
-                descripcion: $form.descripcion.value
+                descripcion: $form.descripcion.value,
+                horarios: $form.horario.value,
+                imegen: $form.imegen.value
             })
             const $div = document.createElement("div")
             $div.classList.add("notification", "is-link", "is-light", "py-2", "my-1")
-            $div.innerHTML = templateElement(`${$form.descripcion.value}`, index)
+            $div.innerHTML = templateElement(`<strong>Sinopsis:</strong><br>${$form.descripcion.value}<br><strong>Horario:</strong><br> ${$form.horario.value}<br><img src="${$form.imegen.value}"><br>`, index)
 
             $divElements.insertBefore($div, $divElements.firstChild)
-
+            
+        
             $form.reset()
         }else{
             alert("Complete los campos")
@@ -45,9 +49,6 @@ const addJsonElement = json => {
         //$jsonDiv.innerHTML = `JSON: ${JSON.stringify(parameters)}`
         //$divElements.innerHTML = ""
         //parameters = []
-
-        alert("Titulo guardado exitosamente!")
-        
-
+        alert("Pelicula guardada exitosamente!")
     })
 })()
