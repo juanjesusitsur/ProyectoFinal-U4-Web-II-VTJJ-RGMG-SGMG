@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#file{
+    display: none;
+}
+.btn{
+    display: block;
+    padding: 10px 21px;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    background-color: #3991A9;
+    border-radius: 3px;
+    cursor: pointer;
+    border-bottom: 3px solid #237085;
+    font-family: sans-serif;
+    text-align: center;
+}
+   
+.btn:hover{
+    transition: all .4s;
+    background-color: #237085;
+}

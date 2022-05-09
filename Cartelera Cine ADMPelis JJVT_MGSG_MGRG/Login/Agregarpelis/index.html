@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Peliculas</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title has-text-centered">Cine ADM Pelis</h1>
+        <div id="jsonDiv">
+
+        </div>
+        <form action="" id="frmPelis">
+            <label class="label">Funciones</label>
+            <div class="field is-grouped">
+                <div class="control has-icons-left">
+                  <input class="input" id="Nombre" name="titulo" type="text" placeholder="Titulo de la pelicula" autocomplete="off">
+                </div>
+                <div class="control has-icons-left">
+                  
+                    <input class="input" id="Descripcion" name="descripcion" type="text" placeholder="Descripcion" autocomplete="off">
+                    
+                </div>
+                <div class="control has-icons-left">
+                  
+                  <input class="input" name="horario" type="text" placeholder="Horario" autocomplete="off">
+                  
+                </div>
+                <div class="control">
+                  <input type="file" name="imegen" class="btn" id="file" autocomplete="off"/>
+                  <input type="button" value="Subir imagen" class="btn is-info" onclick="document.getElementById('file').click()">
+                </div>
+                  <div class="control">
+                    <button id="btnAdd" type="button" class="button is-danger">
+                        <span class="icon">
+                            <i class="fas fa-plus"></i>
+                        </span>
+                      </button>
+                  </div>
+                  <div class="control">
+                    <button id="btnSave" type="button" class="button is-info">Guardar</button>
+                  </div>
+            </div>
+        </form>
+        <hr>
+        <div id="divElements">
+
+        </div>
+    </div>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $("#file").on("change", function(){
+        var imagen = $(this)[0].files[0];
+        var fileReader = new fileReader();
+        fileReader.readAsDataURl(imagen);
+        fileReader.onload = function(){
+          $("#divElements").append("<img src='" + fileReader.result + "'>")
+        };
+      });
+    </script>
+</body>
+</html>
