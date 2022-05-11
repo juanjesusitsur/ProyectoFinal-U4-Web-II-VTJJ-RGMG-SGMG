@@ -30,6 +30,14 @@ const addJsonElement = json => {
                 horarios: $form.horario.value,
                 imegen: $form.imegen.value
             })
+            /*$.post('Cartelera Cine ADMPelis JJVT_MGSG_MGRG/BD/GuadarDatos.php',{tit:$form.titulo.value,descp:$form.descripcion.value,fec:$form.horario.value,img:$form.imegen.value},
+            function(data){
+                if(data!=null){
+                    alert("Los datos se mandoran correctamente a la pagina php")
+                }else{
+                    alert("Los datos son incorrectos")
+                }
+            })*/
             const $div = document.createElement("div")
             $div.classList.add("notification", "is-link", "is-light", "py-2", "my-1")
             $div.innerHTML = templateElement(`<strong>Sinopsis:</strong><br>${$form.descripcion.value}<br><strong>Horario:</strong><br> ${$form.horario.value}<br><img src="${$form.imegen.value}"><br>`, index)
@@ -38,6 +46,7 @@ const addJsonElement = json => {
             
         
             $form.reset()
+            $.post('BD/GuadarDatos.php',{tit:$form.titulo.value,descp:$form.descripcion.value,fec:$form.horario.value,img:$form.imegen.value})
         }else{
             alert("Complete los campos")
         }
@@ -49,6 +58,24 @@ const addJsonElement = json => {
         //$jsonDiv.innerHTML = `JSON: ${JSON.stringify(parameters)}`
         //$divElements.innerHTML = ""
         //parameters = []
-        alert("Pelicula guardada exitosamente!")
+        /*if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != "" && $form.imegen.value != ""){
+            let index = addJsonElement({
+                titulo: $form.titulo.value,
+                descripcion: $form.descripcion.value,
+                horarios: $form.horario.value,
+                imegen: $form.imegen.value
+            })
+            $.post('Cartelera Cine ADMPelis JJVT_MGSG_MGRG/BD/GuadarDatos.php',{tit:$form.titulo.value,descp:$form.descripcion.value,fec:$form.horario.value,img:$form.imegen.value},
+            function(data){
+                if(data!=null){
+                    alert("Los datos se mandoran correctamente a la pagina php")
+                }else{
+                    alert("Los datos son incorrectos")
+                }
+            })*/
+            alert("Pelicula guardada exitosamente!")
+        /*}else{
+            alert("Complete los campos")
+        }*/
     })
 })()

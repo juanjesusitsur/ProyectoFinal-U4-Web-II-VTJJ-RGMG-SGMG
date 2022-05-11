@@ -44,7 +44,7 @@
                     <!--Formulario de Login y registro-->
                     <div class="contenedor__login-register">
                         <!--Login-->
-                        <form action="" class="formulario__login">
+                        <form action="BD/UsuariosDaos.php" class="formulario__login" method="POST">
                             <h2>Iniciar Sesión</h2>
                             <input type="email" id="usuario" placeholder="Correo Electronico">
                             <input type="password" id="contrasena" placeholder="Contraseña">
@@ -54,11 +54,10 @@
                         </form>
         
                         <!--Register-->
-                        <form action="" class="formulario__register">
+                        <form action="BD/UsuariosDaos.php" class="formulario__register" method="POST">
                             <h2>Regístrarse</h2>
                             <input type="text" placeholder="Nombre completo">
                             <input type="email" placeholder="Correo Electronico">
-                            <input type="text" placeholder="Usuario">
                             <input type="password" placeholder="Contraseña">
                             <button>Regístrarse</button>
                         </form>
