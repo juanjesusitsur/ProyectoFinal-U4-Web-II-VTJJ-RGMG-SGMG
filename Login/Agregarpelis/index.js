@@ -23,8 +23,8 @@ const addJsonElement = json => {
     }
 
     $btnAdd.addEventListener("click", (event) => {
-        if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != "" && $form.imegen.value != ""){
-            let index = addJsonElement({
+        if($form.titulo.value == "" && $form.descripcion.value == "" && $form.horario.value == "" && $form.imegen.value == ""){
+            /*let index = addJsonElement({
                 titulo: $form.titulo.value,
                 descripcion: $form.descripcion.value,
                 horarios: $form.horario.value,
@@ -37,7 +37,7 @@ const addJsonElement = json => {
                 }else{
                     alert("Los datos son incorrectos")
                 }
-            })*/
+            })
             const $div = document.createElement("div")
             $div.classList.add("notification", "is-link", "is-light", "py-2", "my-1")
             $div.innerHTML = templateElement(`<strong>Sinopsis:</strong><br>${$form.descripcion.value}<br><strong>Horario:</strong><br> ${$form.horario.value}<br><img src="${$form.imegen.value}"><br>`, index)
@@ -47,7 +47,7 @@ const addJsonElement = json => {
         
             $form.reset()
             $.post('BD/GuadarDatos.php',{tit:$form.titulo.value,descp:$form.descripcion.value,fec:$form.horario.value,img:$form.imegen.value})
-        }else{
+        }else{*/
             alert("Complete los campos")
         }
     })
@@ -73,7 +73,11 @@ const addJsonElement = json => {
                     alert("Los datos son incorrectos")
                 }
             })*/
-            alert("Pelicula guardada exitosamente!")
+        if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != "" && $form.imegen.value != ""){
+           alert("Pelicula guardada exitosamente!", window.location.assign(url="BD/PeliculasDaos"))
+        }else{
+            alert("Compete los campos" )
+        }
         /*}else{
             alert("Complete los campos")
         }*/
