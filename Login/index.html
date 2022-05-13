@@ -44,22 +44,20 @@
                     <!--Formulario de Login y registro-->
                     <div class="contenedor__login-register">
                         <!--Login-->
-                        <form action="BD/UsuariosDaos.php" class="formulario__login" method="POST">
+                        <form action="Agregarpelis/BD/MostrarUsuarios.php" class="formulario__login" method="POST">
                             <h2>Iniciar Sesión</h2>
-                            <input type="email" id="usuario" placeholder="Correo Electronico">
-                            <input type="password" id="contrasena" placeholder="Contraseña">
+                            <input type="email" name="correo" id="usuario" placeholder="Correo Electronico">
+                            <input type="password" name="pass" id="contrasena" placeholder="Contraseña">
                             <button type="submit" id="btn_entrar" onclick="validar()" href="">Entrar</button>
-
-                            <a href="Agregarpelis/index.html"></a>
                         </form>
         
                         <!--Register-->
-                        <form action="BD/UsuariosDaos.php" class="formulario__register" method="POST">
+                        <form action="Agregarpelis/BD/UsuariosDaos.php" class="formulario__register" method="POST">
                             <h2>Regístrarse</h2>
                             <input type="text" name="nombre" placeholder="Nombre completo">
                             <input type="email" name="correo" placeholder="Correo Electronico">
                             <input type="password" name="pass" placeholder="Contraseña">
-                            <button>Regístrarse</button>
+                            <button type="submit" class="submit">Regístrarse</button>
                         </form>
                     </div>
                 </div>              
@@ -77,7 +75,7 @@
                     
 					alert("Usuario y contraseña Valido", window.location.assign(url="Agregarpelis/index.html"));
 				}else{
-					alert("Usuario y contraseña no Valido");
+					alert(window.location.assign(url="../"));
 				}
                 
 			}

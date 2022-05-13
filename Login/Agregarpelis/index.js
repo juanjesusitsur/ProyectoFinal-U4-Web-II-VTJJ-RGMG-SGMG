@@ -73,8 +73,8 @@ const addJsonElement = json => {
                     alert("Los datos son incorrectos")
                 }
             })*/
-        if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != "" && $form.imegen.value != ""){
-           alert("Pelicula guardada exitosamente!", window.location.assign(url="BD/PeliculasDaos"))
+        if($form.titulo.value != "" && $form.descripcion.value != "" && $form.horario.value != ""){
+           //alert("",window.location.assign(url="BD/PeliculasDaos.php"))
         }else{
             alert("Compete los campos" )
         }
