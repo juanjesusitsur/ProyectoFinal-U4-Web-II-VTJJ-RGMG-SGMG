@@ -10,7 +10,7 @@
 }
 
 body {
-	background: var(--fondo);
+	background: var(--fondo) ;
 	font-family: 'Open Sans', sans-serif;
 }
 
@@ -52,7 +52,8 @@ header nav a.activo {
 	font-size: 16px;
 	min-height: 40.62em;
 	color: #fff;
-	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), url(../img/backdrop.jpg);
+	background: linear-gradient(rgba(0, 0, 0, .50) 0%, rgba(0,0,0,.50) 100%), 
+	url(../img/backdrop.jpg);
 	background-position: center center;
 	background-size: cover;
 	margin-bottom: 3.12em;
@@ -77,27 +78,6 @@ header nav a.activo {
 	line-height: 1.75em;
 	max-width: 50%;
 	margin-bottom: 1.25em;
-}
-
-.pelicula-principal .boton {
-	background: rgba(0,0,0, 0.5);
-	border: none;
-	border-radius: 0.31em;
-	padding: 0.93em 1.87em;
-	color: #fff;
-	margin-right: 1.25em;
-	cursor: pointer;
-	transition: .3s ease all;
-	font-size: 1.12em;
-}
-
-.pelicula-principal .boton:hover {
-	background: #fff;
-	color: #000;
-}
-
-.pelicula-principal .boton i {
-	margin-right: 1.25em;
 }
 
 /* ---- ----- ----- Media Queries ----- ----- ----- */
